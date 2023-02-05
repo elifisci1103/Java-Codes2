@@ -1,16 +1,31 @@
 package day02;
 
-public class ForLoop4 { public static void main(String[] args) {
-    // input olarak verilen bir Stringde
-    // index'i tek sayi olanlari kucuk harfle
-    // index'i cift sayi olanlari buyuk harfle yazdirin
-    // ornek : Java  output: JaVa
-    String input= "Java candir, Selenium heyecandir";
-    for (int i = 0; i <input.length() ; i++) {
-        System.out.print  ( i%2==0   // index cift mi ?
-                ? input.substring(i,i+1).toUpperCase() // index cift ise
-                : input.substring(i,i+1).toLowerCase() // index cift degilse
-        );
+public class ForLoop4 {
+    public static void main(String[] args) {
+    // eger sart i'nin hicbir degeri icin true olmuyorsa
+    // loop calisir ama loop body'si devreye hic girmediginden
+    // islem yapilmaz
+    // input olarak verilen sayidan bire kadar tum sayilari yazdirin
+    int input = 23;  // eger kullanicinin pozitif ve negatif girebilecegini ongorup
+    // ona gore kod yazmazsak, loop body'sinin hic calismamasi durumu olabilir
+    if (input>1){
+        for (int i = input; i >= 1 ; i--) {
+            System.out.print(i + " ");
+        }
+    }else{
+        for (int i = input; i <=1 ; i++) {
+            System.out.print(i + " ");
+        }
+    }
+    // eger sart i'nin tum degerleri icin dogru oluyorsa
+    // teknik olarak sonsuz loop olusur deriz.
+    // bilgisayarimiz sonsuza kadar calismaz, ram dolar veya int'in sinirina ulasilir
+    // ama teknik olarak sonsuz loop denir
+    // input olarak verilen sayidan 100'e kadar tum tamsayilari yazdirin
+    input = 10;
+    System.out.println("");
+    for (int i = input ; i <= 100 ; i++) {  // i-- yazsak sonsuz loop olusur
+        System.out.print(i + " ");
     }
 }
 }
